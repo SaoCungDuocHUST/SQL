@@ -253,6 +253,14 @@ values
 (8, N'Bọ trĩ', 5, N'Làm hỏng hoa và quả non của cây trái'),
 (9, N'Sâu keo mùa thu', 3, N'Gây thiệt hại lớn cho ngô và các cây lương thực khác'),
 (10, N'Ốc bươu vàng', 5, N'Phá hại cây lúa, gây thiệt hại mùa màng nghiêm trọng');
+ create table SVGayHaiVung
+(VungId int foreign key references Vung(Id)
+, SVGayHaiId int foreign key references SVGayHai(Id)
+)
+insert into SVGayHaiVung(SVGayHaiId, VungId)
+values 
+(1, 2)
+, (2, 3)
 
 
 
