@@ -1,4 +1,4 @@
-﻿use master 
+use master 
 go 
 -- Kiểm tra và xóa database nếu tồn tại 
 if exists (select name from sys.databases where name = 'KTPM')
@@ -142,16 +142,21 @@ create table SanPham
 )
 insert into SanPham (Id, Ten, LoaiSanPhamId)
 values 
-(1, N'Sản phẩm A', 1),  
-(2, N'Sản phẩm B', 2),  
-(3, N'Sản phẩm C', 1),  
-(4, N'Sản phẩm D', 3),  
-(5, N'Sản phẩm E', 2),  
-(6, N'Sản phẩm F', 1),  
-(7, N'Sản phẩm G', 3),  
-(8, N'Sản phẩm H', 2),  
-(9, N'Sản phẩm I', 1),  
-(10, N'Sản phẩm J', 3); 
+(1, N'Lúa', 1),
+(2, N'Cà phê', 1),
+(3, N'Cam', 1),
+(4, N'Táo', 2),
+(5, N'Nhãn', 2),
+(6, N'Bưởi', 2),
+(7, N'Sầu riêng', 3),
+(8, N'Vải', 3),
+(9, N'Chuối', 3),
+(10, N'Thuốc trừ sâu', 4),
+(11, N'Thuốc trừ chuột', 4),
+(12, N'Thuốc diệt cỏ', 4),
+(13, N'Phân bón Bình Điền', 5),
+(14, N'Phân bón Lâm Thao', 5),
+(15, N'Phân bón Văn Điển', 5);
 
 -- Tạo bảng loại cơ sở 
 create table LoaiCoSo
@@ -253,17 +258,3 @@ values
 (8, N'Bọ trĩ', 5, N'Làm hỏng hoa và quả non của cây trái'),
 (9, N'Sâu keo mùa thu', 3, N'Gây thiệt hại lớn cho ngô và các cây lương thực khác'),
 (10, N'Ốc bươu vàng', 5, N'Phá hại cây lúa, gây thiệt hại mùa màng nghiêm trọng');
- create table SVGayHaiVung
-(VungId int foreign key references Vung(Id)
-, SVGayHaiId int foreign key references SVGayHai(Id)
-)
-insert into SVGayHaiVung(SVGayHaiId, VungId)
-values 
-(1, 2)
-, (2, 3)
-
-
-
-
-
-
